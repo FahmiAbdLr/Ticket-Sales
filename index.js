@@ -8,10 +8,13 @@ app.use(express.static(__dirname))
 const userRoute = require('./routes/user.route.js')
 const eventRoute = require('./routes/event.route')
 const seatRoute = require('./routes/seat.route')
+const ticketRoute = require(`./routes/ticket.route`)
 
 app.use(`/user`, userRoute)
 app.use(`/event`, eventRoute)
 app.use(`/seat`, seatRoute)
+app.use(`/ticket`, ticketRoute)
+
 
 
 app.listen(PORT, () => {

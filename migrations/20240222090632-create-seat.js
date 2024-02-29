@@ -10,7 +10,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       eventID: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'events',
+          key: 'eventID'
+        },
+        allowNull: false
       },
       rowNum: {
         type: Sequelize.STRING

@@ -42,7 +42,7 @@ exports.findUser = async (request, response) => {
 
 // Create User
 exports.addUser = (request, response) => {
-    /** prepare data from request */
+
     let newUser = {
         firstname: request.body.firstname,
         lastname: request.body.lastname,
@@ -50,7 +50,7 @@ exports.addUser = (request, response) => {
         password: md5(request.body.password),
         role: request.body.role
     }
-    /** execute inserting data to user's table */
+
     userModel.create(newUser)
         .then(result => {
             /** if insert's process success */

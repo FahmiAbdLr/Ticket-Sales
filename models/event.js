@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-const events = require("events");
 module.exports = (sequelize, DataTypes) => {
   class event extends Model {
     /**
@@ -15,20 +14,19 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.seat,{
         foreignKey: "eventID", as: "eventSeat"
       })
+
       this.hasMany(models.ticket,{
         foreignKey: "eventID", as: "eventTicket"
       })
     }
   }
   event.init({
-
     eventID: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-
     eventName: DataTypes.STRING,
     eventDate: DataTypes.DATE,
     venue: DataTypes.STRING,

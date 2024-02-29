@@ -10,13 +10,28 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       eventID: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'events',
+          key: 'eventID'
+        },
+        allowNull: false
       },
       userID: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'userID'
+        },
+        allowNull: false
       },
       seatID: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'seats',
+          key: 'seatID'
+        },
+        allowNull: false
       },
       bookedDate: {
         type: Sequelize.DATE

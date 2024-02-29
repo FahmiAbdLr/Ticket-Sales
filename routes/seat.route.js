@@ -7,10 +7,10 @@ app.get("/", seatController.getAllSeat)
 
 app.post("/", seatController.addSeat)
 
-// app.put("/:id", eventController.updateEvent)
-//
-// app.delete("/:id", eventController.deleteEvent)
-//
-// app.get("/:key", eventController.findEvent)
+app.put("/:id", seatController.updateSeat)
+
+app.delete("/:id", seatController.deleteSeat)
+
+app.get("/:key", seatController.findSeat)
 
 module.exports = app
